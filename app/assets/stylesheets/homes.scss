@@ -45,7 +45,7 @@ body#home {
   background-size: cover; 
 }
 body#about {
-  background: url("http://bigbackground.com/wp-content/uploads/2013/05/lee-child-jack-reacher.jpg") no-repeat center;
+  background: url("http://www.thewallpapers.org/photo/37825/fast-five-197.jpg") no-repeat center;
   /*background: url("../assets/lord-of-the-rings-wallpaper-4.jpg") no-repeat; */
   background-size: cover;
   background-attachment: fixed;
@@ -54,6 +54,12 @@ body#generate {
   height: 100%;
   background: url("../assets/2015-Action-Movie-Taken-3.jpg") no-repeat center;
   background-size: cover;
+}
+
+body#generate2 {
+  height: 100%;
+  background: url("http://www.thatfilmguy.net/wp-content/uploads/2012/11/end-of-watch.jpg") no-repeat center;
+  background-size: cover; 
 }
 
 
@@ -119,7 +125,10 @@ body#about .masthead-nav li.about > a:hover,
 body#about .masthead-nav li.about > a:focus,
 body#generate .masthead-nav li.generate > a,
 body#generate .masthead-nav li.generate > a:hover,
-body#generate .masthead-nav li.generate > a:focus {
+body#generate .masthead-nav li.generate > a:focus,
+body#generate2 .masthead-nav li.generate > a,
+body#generate2 .masthead-nav li.generate > a:hover,
+body#generate2 .masthead-nav li.generate > a:focus {
   color: #fff;
   border-bottom-color: #fff;
 }
