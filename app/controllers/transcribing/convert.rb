@@ -13,6 +13,9 @@ end
 
 def convert_file(file, filename)
 	puts "Converting file...\n"
+	if not File.exists? "public/transcribed_data/"
+      `mkdir public/transcribed_data/`
+    end
 	system("ffmpeg -y -i #{file} -vn -acodec pcm_s16le -ar 44100 -ac 1 public/transcribed_data/#{filename}.wav 2> /dev/null")
 	if $?.success? 
 		puts "Convertion successful!\n" 
