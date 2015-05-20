@@ -18,6 +18,9 @@ class FileuploadController < ApplicationController
     name = params[:upload][:file].original_filename
     directory = "public/data"
     path = File.join(directory, name)
+    if not File.exists? directory
+      `mkdir "#{directory}"`
+    end
     File.open(path, "wb") { |f| f.write(params[:upload][:file].read) }
     lang = transform_lang(params[:upload][:lang])
     srt_file = let_the_magic_begin(path, lang.to_s)
