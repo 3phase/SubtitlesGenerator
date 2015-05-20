@@ -1,0 +1,27 @@
+<%= stylesheet_link_tag :nav_unlogged -%>
+<%= stylesheet_link_tag :homes -%>
+<% content_for :body do -%>
+<%="about"%><% end -%>
+<div id = "gatherer" style="width: 700px; margin: 0 auto; z-index: 9;">
+	<%= render 'layouts/nav_unlogged' %>
+	<div class="row" style="padding-top: 70px;">
+            <h2 class="page-header" style="border-bottom: none">Our Team</h2>
+            <div class="blurred">
+	            <div class="col-lg-4 col-sm-6 text-center" style="width: 100%">
+	                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="" style="float: left;">
+	                <h3>Ivelin Slavchev</h3>
+	                <p>Student, ELSYS year 2016 graduate; Co-founder of the project</p>
+	            </div>
+	            <div class="col-lg-4 col-sm-6 text-center" style="width: 100%; margin-top: 40px;">
+	                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="" style="float: left;">
+	                <h3>Lyubomir Yankov</h3>
+	                <p>Student, ELSYS year 2016 graduate; Co-founder of the project</p>
+	            </div>
+	            <div class="col-lg-4 col-sm-6 text-center" style="width: 100%; margin-top: 40px;">
+	                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="" style="float: left;">
+	                <h3>Petko Bozhinov</h3>
+	                <p>Student, ELSYS year 2016 graduate; Co-founder of the project</p>
+	            </div>
+	        </div>
+        </div>
+</div>

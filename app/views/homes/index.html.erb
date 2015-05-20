@@ -1,0 +1,38 @@
+<%= stylesheet_link_tag :homes -%>
+<% content_for :body do -%>
+<%="home"%><% end -%>
+
+<div class="site-wrapper">
+
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+          <%= render 'layouts/nav_unlogged' %>
+          <%- model_class = Home -%>
+          <!-- <div class="page-header">
+            <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+          </div> -->
+
+          <div class="inner cover">
+            <h1 class="cover-heading">Generate the subtitles you love!</h1>
+            <p class="lead">With SubtitlesGenerator you are able to generate and download wonderful subtitles for your movie! Right now, no need to spend your whole week on it!</p>
+            <p class="lead">
+              <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-lg btn-default" %>
+              <br><span style="font-size: 0.8em">or 
+                <%= link_to "Sign In", new_user_session_path, {:style => 'text-decoration: underline'} %>.
+              </span>
+            </p>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Made with <span style="color: #FFF;"><3</span> in <span style="color: #FFF;">Sofia, Bulgaria</span>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>

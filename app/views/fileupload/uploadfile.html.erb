@@ -1,0 +1,77 @@
+<%= stylesheet_link_tag :fileupload -%>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#" style="color: #FFF">SubtitlesGenerator</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <!-- <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li> -->
+            <li><a href="#"><%= current_user.email %></a></li>
+            <li><%= link_to "Logout", destroy_user_session_path, :method => :delete -%></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search for subtitles...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Upload movie <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">My subtitles</a></li>
+            <li><%= link_to "Plans", fileupload_plans_path %>
+            <li><a href="">Shared subtitles</a></li>
+           </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Dashboard</h1>
+
+          <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <div class="steps_presented"><p class="steps_presented_number">1</p></div>
+              <h4>Upload</h4>
+              <span class="text-muted">Upload the video file you want the subtitles for.</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <div class="steps_presented"><p class="steps_presented_number">2</p></div>
+              <h4>Select language</h4>
+              <span class="text-muted">Select the language, in which you would like the translated subtitles to be in.</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <div class="steps_presented"><p class="steps_presented_number">3</p></div>
+              <h4>Share subtitles</h4>
+              <span class="text-muted">Share the generated subtitles with the other users!</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <div class="steps_presented"><p class="steps_presented_number">4</p></div>
+              <h4>Download</h4>
+              <span class="text-muted">Enjoy the automatically generated subtitles!</span>
+            </div>
+          </div>
+
+			<h2 class="sub-header">Upload movie</h2>
+			<form accept-charset="UTF-8" method="post" enctype="multipart/form-data">
+				<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+					<% @lang =["Bulgarian", "Hungarian", "English", "Polish", "Russian", "German"] %>
+					<% @lang.sort! %>
+					<p> Select file: <%= file_field_tag 'upload[file]', class: 'form-control', :required => true %> </p>
+					<%= select_tag 'upload[lang]', options_for_select([["Select language" , "" ]] + @lang.to_a), class: 'form-control', :required => true %></p>
+					<p><%= check_box_tag 'share_subtitles', 'yes', true -%> <label for="share_subtitles" style="font-weight: 200">Share subtitles</label></p>
+					<%= submit_tag "Get subtitles", class: 'btn btn-default' %>
+			</form>
+        </div>
+      </div>
+    </div>
